@@ -1,0 +1,214 @@
+@import url("https://fonts.googleapis.com/css2?family=Pangolin&display=swap");
+
+:root {
+  --main-yellow: #e18e77;
+  --main-orange: #e65c4b; 
+ /* --main-red: #ad3541;*/
+  --main-red: #e18e77;
+  --main-blue: #1c768f; 
+  --main-teal: #1f9cb1;
+  --main-white: #f8f3f2;
+  --main-black: #032539;
+}
+
+* {
+  box-sizing: border-box;
+  font-family: "Pangolin", cursive;  
+  color: var(--main-black);
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  background-color: var(--main-blue);
+  height: 100%;
+}
+
+header {
+  color: var(--main-white);
+  text-align: center;
+  padding: 25px;
+}
+
+h1 {
+  font-size: 3rem;
+}
+
+header p {
+  font-size: 1.5rem;
+}
+
+
+
+/* SCOREBOARD */
+.player-icon {
+  align-items: center;
+  display: flex;
+  flex-direction: column;  
+  height: 100px;
+  justify-content: center;
+  width: 100px;
+}
+
+i {
+  font-size: 55px;
+  padding-top: 5px;
+}
+
+.score p {
+  font-size: 5rem;
+  padding-top: 5px;  
+  text-align: center;
+}
+
+#scoreboard {
+  background: linear-gradient(to right,var(--main-blue), var(--main-blue), var(--main-red), var(--main-blue), var(--main-blue));
+  display: flex;
+  justify-content: center;
+}
+
+.score {
+  background-color: var(--main-teal);
+  border: 1px solid #000;  
+  height: 100px;
+  width: 100px;
+}
+
+
+
+/* Results Section */
+#result {
+  align-items: center;  
+  color: var(--main-white);
+  display: flex;
+  font-size: 3rem; 
+  height: 100px; 
+  justify-content: center;
+  margin: 0 100px;
+  width: 25%;  
+}
+
+#result i {
+  margin: 0 75px;
+}
+
+#declaration {
+  color: var(--main-white);
+  font-size: 2rem; 
+  height: 50px;
+  margin-top: 15px; 
+  text-align: center;
+}
+
+/* Face Off Section */
+#face-off {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+
+/* Selection Section */
+h3 {
+  padding: 25px 0 15px 0; 
+  text-align: center;
+}
+
+.selection {
+  align-items: center;
+  border: 1px solid var(--main-teal);
+  border-radius: 15px;
+  box-shadow: 0 0 10px var(--main-black);
+  display: flex;
+  flex-direction: column; 
+  height: 125px;
+  justify-content: center;
+  margin: 0 25px;
+  width: 125px;
+  animation-name: coloring;
+  animation-duration: 5s;
+  animation-iteration-count: infinite;
+}
+
+@keyframes coloring {
+  0% {
+    background: var(--main-yellow);
+  }
+  50% {
+    background: var(--main-orange);
+  }
+  100% {
+    background: var(--main-yellow);
+  }
+}
+
+.selection:hover { 
+  border: 5px solid var(--main-teal);
+  color: var(--main-white);
+  cursor: pointer;
+}
+
+#game {
+  display: flex;
+  justify-content: center;
+}
+
+
+
+/* Reset Button */
+#reset {
+  padding: 50px;
+  text-align: center;
+}
+
+button { 
+  background-color: var(--main-red);
+  border: 5px solid var(--main-blue);
+  border-radius: 15px;
+  font-size: 1.5rem;
+  padding: 5px 25px;
+}
+
+button:hover {
+  color: var(--main-white);
+  cursor: pointer;
+}
+
+.pulse button:hover{ 
+  animation: pulse 1s infinite;
+  animation-timing-function: linear;   
+}
+
+.pulsing{ 
+  animation: pulse 1s infinite;
+  animation-timing-function: linear;   
+}
+
+@keyframes pulse {
+  0% { transform: scale(1); }
+  50% { transform: scale(1.1);
+  100% { transform: scale(1); }
+  }
+}
+
+
+@media (max-width: 1250px) {
+  #scoreboard {
+    flex-wrap: wrap;
+  }
+  .score {
+    width: 75px;
+  }
+  #result {
+    order:2;
+    width: 100%;
+    font-size: 1rem;
+  }
+  .player-icon i {
+    font-size: 25px;
+  }
+}
+
+
+  
+
